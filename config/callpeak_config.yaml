@@ -1,0 +1,19 @@
+#Enter treatment sample names
+treatments:
+ - sample1
+ - sample2...
+
+#Provide controls if present, if not comment out these lines
+#controls:
+# - control1
+# - control2...
+
+#yes or no
+control_present: "no"
+
+
+#If calling broad peaks use --broad
+broad_peak: ""
+
+
+macs_params: "-q 0.1 --keep-dup all --nomodel"

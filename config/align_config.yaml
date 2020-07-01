@@ -1,0 +1,35 @@
+# Enter sample details
+samples:
+  - sample1
+  - sample2
+  - sample3
+  - sample4... 
+
+#Single or paired-end
+end_type: se
+
+#Method for alignment: bowtie2, hisat2 or kallisto
+map_method: bowtie2 
+
+#Parameters for various steps
+trim_quality: 20
+
+trim_cores: 4
+
+trim_params: --stringency 2 --gzip --length 25 --max_n 4 --trim-n
+
+bowtie_idx: /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/UCSC/hg19/Sequence/Bowtie2Index/genome
+
+bowtie_params: -p 24 -q --time 
+
+hisat_idx: /scratch/ukarvind_root/ukarvind/anashank/hg19/genome
+
+hisat_params: -p 24 -q --time
+
+kallisto_idx: /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/homo_sapiens/transcriptome.idx
+
+kallisto_params: -b 20 -t 8
+
+sort_params: -m 2G -@ 8
+
+
