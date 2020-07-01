@@ -1,5 +1,3 @@
-configfile: "config/filter_config.yaml"
-
 
 rule all:
   input:

@@ -1,5 +1,3 @@
-configfile: "/nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/config/callpeak_config.yaml"
-
 
 #Call peaks using MACS2
 if config["control_present"] == "yes":

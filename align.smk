@@ -1,5 +1,3 @@
-configfile: "config/align_config.yaml"
-
 if config["map_method"] == "hisat2" or config["map_method"] == "bowtie2":
   rule all:
     input:
