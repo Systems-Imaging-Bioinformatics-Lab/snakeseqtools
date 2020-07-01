@@ -1,0 +1,3 @@
+AttributeError in line 44 of /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/callpeaks.smk:
+'Namedlist' object has no attribute 'o2'
+  File "/nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/callpeaks.smk", line 44, in <module>

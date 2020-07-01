@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 2 of /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/align.smk:
+Missing input files for rule all:
+sorted/GCLM_rep2.sorted.bam.bai
+sorted/GCLM_rep1.sorted.bam.bai

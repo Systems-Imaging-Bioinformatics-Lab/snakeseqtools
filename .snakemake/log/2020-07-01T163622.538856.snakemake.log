@@ -1,0 +1,3 @@
+The flag 'directory' used in rule blacklist_filter is only valid for outputs, not inputs.
+Building DAG of jobs...
+Nothing to be done.

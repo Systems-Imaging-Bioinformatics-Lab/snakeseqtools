@@ -1,0 +1,5 @@
+Building DAG of jobs...
+ChildIOException:
+File/directory is a child to another output:
+/nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/GCLM_rep1_macs2
+/nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/GCLM_rep1_macs2/GCLM_rep1.BLfiltered.narrowPeak

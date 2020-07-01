@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 6 of /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/filterbam.smk:
+Missing input files for rule mark_duplicates:
+bamfiles/GCLM_rep1.sorted.bam

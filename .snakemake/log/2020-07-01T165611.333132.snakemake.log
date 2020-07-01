@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	blacklist_filter
+	2	macs2_no_control
+	5
+
+[Wed Jul  1 16:56:11 2020]
+rule macs2_no_control:
+    input: treatments/GCLM_rep1.pruned.bam
+    output: GCLM_rep1_macs2/GCLM_rep1_peaks.narrowPeak
+    log: log/GCLM_rep1.macs2
+    jobid: 3
+    wildcards: sample=GCLM_rep1
+
+
+[Wed Jul  1 16:56:11 2020]
+rule macs2_no_control:
+    input: treatments/GCLM_rep2.pruned.bam
+    output: GCLM_rep2_macs2/GCLM_rep2_peaks.narrowPeak
+    log: log/GCLM_rep2.macs2
+    jobid: 4
+    wildcards: sample=GCLM_rep2
+
+[Wed Jul  1 16:56:11 2020]
+Error in rule macs2_no_control:
+    jobid: 3
+    output: GCLM_rep1_macs2/GCLM_rep1_peaks.narrowPeak
+    log: log/GCLM_rep1.macs2 (check log file(s) for error message)
+    shell:
+        mkdir GCLM_rep1_macs2;macs2 callpeak -t treatments/GCLM_rep1.pruned.bam -n GCLM_rep1 -q 0.1 --keep-dup all --nomodel --outdir GCLM_rep1_macs2  &> log/GCLM_rep1.macs2;
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Jul  1 16:56:11 2020]
+Error in rule macs2_no_control:
+    jobid: 4
+    output: GCLM_rep2_macs2/GCLM_rep2_peaks.narrowPeak
+    log: log/GCLM_rep2.macs2 (check log file(s) for error message)
+    shell:
+        mkdir GCLM_rep2_macs2;macs2 callpeak -t treatments/GCLM_rep2.pruned.bam -n GCLM_rep2 -q 0.1 --keep-dup all --nomodel --outdir GCLM_rep2_macs2  &> log/GCLM_rep2.macs2;
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/.snakemake/log/2020-07-01T165611.333132.snakemake.log

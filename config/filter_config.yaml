@@ -1,8 +1,7 @@
 # Enter sample details
 samples:
- - sample1
- - sample2...
-
+  - GCLM_rep1
+  - GCLM_rep2
 
 samtools_prune_flags: "-F 0x4 -F 0x100 -F 0x200 -F 0x400 -F 0x800"
 

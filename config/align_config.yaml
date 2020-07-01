@@ -1,12 +1,10 @@
 # Enter sample details
 samples:
-  - sample1
-  - sample2
-  - sample3
-  - sample4... 
+  - GCLM_rep1
+  - GCLM_rep2  
 
 #Single or paired-end
-end_type: se
+end_type: pe
 
 #Method for alignment: bowtie2, hisat2 or kallisto
 map_method: bowtie2 

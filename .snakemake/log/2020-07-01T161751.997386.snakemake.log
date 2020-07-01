@@ -1,0 +1,91 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	index_dupmarked_bams
+	2	mark_duplicates
+	2	prune
+	7
+
+[Wed Jul  1 16:17:52 2020]
+rule mark_duplicates:
+    input: sorted/GCLM_rep2.sorted.bam
+    output: mrkdup/GCLM_rep2.mrkdup.bam, mrkdup/GCLM_rep2.mrkdup.metric
+    log: log/GCLM_rep2.mrkdup
+    jobid: 5
+    wildcards: sample=GCLM_rep2
+
+
+[Wed Jul  1 16:17:52 2020]
+rule mark_duplicates:
+    input: sorted/GCLM_rep1.sorted.bam
+    output: mrkdup/GCLM_rep1.mrkdup.bam, mrkdup/GCLM_rep1.mrkdup.metric
+    log: log/GCLM_rep1.mrkdup
+    jobid: 3
+    wildcards: sample=GCLM_rep1
+
+[Wed Jul  1 16:18:15 2020]
+Finished job 5.
+1 of 7 steps (14%) done
+
+[Wed Jul  1 16:18:15 2020]
+rule index_dupmarked_bams:
+    input: mrkdup/GCLM_rep2.mrkdup.bam
+    output: mrkdup/GCLM_rep2.mrkdup.bam.bai
+    log: log/GCLM_rep2.index
+    jobid: 6
+    wildcards: sample=GCLM_rep2
+
+[Wed Jul  1 16:18:16 2020]
+Finished job 6.
+2 of 7 steps (29%) done
+
+[Wed Jul  1 16:18:16 2020]
+rule prune:
+    input: mrkdup/GCLM_rep2.mrkdup.bam, mrkdup/GCLM_rep2.mrkdup.bam.bai
+    output: pruned/GCLM_rep2.pruned.bam, pruned/GCLM_rep2.pruned.bam.bai
+    jobid: 2
+    wildcards: sample=GCLM_rep2
+
+[Wed Jul  1 16:18:17 2020]
+Finished job 2.
+3 of 7 steps (43%) done
+[Wed Jul  1 16:18:21 2020]
+Finished job 3.
+4 of 7 steps (57%) done
+
+[Wed Jul  1 16:18:21 2020]
+rule index_dupmarked_bams:
+    input: mrkdup/GCLM_rep1.mrkdup.bam
+    output: mrkdup/GCLM_rep1.mrkdup.bam.bai
+    log: log/GCLM_rep1.index
+    jobid: 4
+    wildcards: sample=GCLM_rep1
+
+[Wed Jul  1 16:18:22 2020]
+Finished job 4.
+5 of 7 steps (71%) done
+
+[Wed Jul  1 16:18:22 2020]
+rule prune:
+    input: mrkdup/GCLM_rep1.mrkdup.bam, mrkdup/GCLM_rep1.mrkdup.bam.bai
+    output: pruned/GCLM_rep1.pruned.bam, pruned/GCLM_rep1.pruned.bam.bai
+    jobid: 1
+    wildcards: sample=GCLM_rep1
+
+[Wed Jul  1 16:18:24 2020]
+Finished job 1.
+6 of 7 steps (86%) done
+
+[Wed Jul  1 16:18:24 2020]
+localrule all:
+    input: pruned/GCLM_rep1.pruned.bam, pruned/GCLM_rep2.pruned.bam
+    jobid: 0
+
+[Wed Jul  1 16:18:24 2020]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/.snakemake/log/2020-07-01T161751.997386.snakemake.log

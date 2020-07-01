@@ -1,7 +1,7 @@
 #Enter treatment sample names
 treatments:
- - sample1
- - sample2...
+  - GCLM_rep1
+  - GCLM_rep2
 
 #Provide controls if present, if not comment out these lines
 #controls:
@@ -15,5 +15,6 @@ control_present: "no"
 #If calling broad peaks use --broad
 broad_peak: ""
 
+blacklist: "/scratch/ukarvind_root/ukarvind99/anashank/pipeline/ChIPseq_ATACseq_pipelines/data/references/blacklist/hg19-blacklist.v2.bed.gz"
 
 macs_params: "-q 0.1 --keep-dup all --nomodel"

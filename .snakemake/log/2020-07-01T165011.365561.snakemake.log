@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	blacklist_filter
+	2	macs2_no_control
+	5
+
+[Wed Jul  1 16:50:11 2020]
+rule macs2_no_control:
+    input: treatments/GCLM_rep2.pruned.bam
+    output: GCLM_rep2_peaks.narrowPeak
+    log: log/GCLM_rep2.macs2
+    jobid: 4
+    wildcards: sample=GCLM_rep2
+
+
+[Wed Jul  1 16:50:11 2020]
+rule macs2_no_control:
+    input: treatments/GCLM_rep1.pruned.bam
+    output: GCLM_rep1_peaks.narrowPeak
+    log: log/GCLM_rep1.macs2
+    jobid: 3
+    wildcards: sample=GCLM_rep1
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 30 of /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/callpeaks.smk:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+GCLM_rep2_peaks.narrowPeak
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 30 of /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/callpeaks.smk:
+Job completed successfully, but some output files are missing. Missing files after 5 seconds:
+GCLM_rep1_peaks.narrowPeak
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /nfs/turbo/umms-ukarvind/tstephie/CBSR/rnaseq/snakeRNAseq/snakeseqtools/.snakemake/log/2020-07-01T165011.365561.snakemake.log
