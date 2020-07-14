@@ -27,7 +27,7 @@ If you select `bowtie2` or `hisat2` the final output would be the sorted and ind
 
 Before running `callpeaks.sbat`, create two folders named `treatments` and `controls` and place the pruned bam files from the previous steps in their respective folders. You can input multiple treatments and controls to call peaks by following the below mentioned `config` file format. You can also choose to run MACS2 without a control sample by updating the `callpeak_config.yaml` file appropriately. In this case, you do not have to create a `controls` folder.
 
-If you have two treatment samples t1.bam, t2.bam and the corresponding controls are c1.bam and c2.bam, mention these in `callpeak_config.yaml` in the correct order:
+If you have two treatment samples `t1.bam`, `t2.bam` and the corresponding controls are `c1.bam` and `c2.bam`, mention these in `callpeak_config.yaml` in the correct order:
 
 ```
 treatments:
