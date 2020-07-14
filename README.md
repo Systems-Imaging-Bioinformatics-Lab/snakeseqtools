@@ -5,7 +5,7 @@ Analysis pipelines for RNAseq, ChIPseq and ATAC-seq
 # Before running 
 Modify all config files in the `config` folder to include sample details to be analyzed and required index paths as per specifications. You can also specify custom options for the trimming and alignment steps. 
 
-Samples can be run in single or paired ended modes, and the corresponding option can be specified in the `config.yaml` file as `se` or `pe` respectively. All input files must have the format `.fq.gz` and be placed a folder called `input` . Paired ended samples must be specified in the following format: `sample_1.fq.gz, sample_2.fq.gz`. Multiple samples can be specified under the keyword `samples` in the `config.yaml` file in the following format (not the space between `-` and `sample`):
+Samples can be run in single or paired ended modes, and the corresponding option can be specified in the `config.yaml` file as `se` or `pe` respectively. All input files must have the format `.fq.gz` and be placed a folder called `input` . Paired ended samples must be specified in the following format: `sample_1.fq.gz, sample_2.fq.gz`. Multiple samples can be specified under the keyword `samples` in the `config.yaml` file in the following format (note the space between `-` and `sample`):
 
 ```
 samples:
@@ -21,6 +21,17 @@ Also, you can specify any one of the following alignment methods in the `config.
 
 If you select `bowtie2` or `hisat2` the final output would be the sorted and indexed bam files. If you select `kallisto`, the final output would be the abundance files.
 
+##### Notes on Filename Restrictions
+
+Fastq files must be gzipped, and must have the extension `.fq.gz` for the pipelines to work.
+
+To gzip all fastqs in a directory recursively, you can use the following command:
+    # Assuming fastq filenames end in ".fastq" here: If they end in ".fq", change the argument to -name "*.fq"
+    find /path/to/fastq_dir -type f -name "*.fastq" -exec gzip {} \;
+
+If your file extensions are not `.fq.gz`, for example if they are `.fastq.gz`, you can rename them all with the following command. Once again, this operates recursively in the fastq directory.
+
+    find /path/to/fastq_dir -type f -name "*.fastq.gz" -exec rename .fastq.gz .fq.gz {} \;
 
 ### Dependiencies
 * python 3
