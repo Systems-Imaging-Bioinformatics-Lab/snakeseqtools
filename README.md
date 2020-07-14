@@ -31,7 +31,7 @@ To gzip all fastqs in a directory recursively, you can use the following command
     
     find /path/to/fastq_dir -type f -name "*.fastq" -exec gzip {} \;
 
-If your file extensions are not `.fq.gz`, for example if they are `.fastq.gz`, you can rename them all with the following command. Once again, this operates recursively in the fastq directory.
+If your file extensions are not `.fq.gz`, for example if they are `.fastq.gz`, you can rename them all with the following command.
 
     find /path/to/fastq_dir -type f -name "*.fastq.gz" -exec rename .fastq.gz .fq.gz {} \;
 
