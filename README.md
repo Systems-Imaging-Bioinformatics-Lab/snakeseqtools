@@ -26,7 +26,8 @@ If you select `bowtie2` or `hisat2` the final output would be the sorted and ind
 Fastq files must be gzipped, and must have the extension `.fq.gz` for the pipelines to work.
 
 To gzip all fastqs in a directory recursively, you can use the following command:
-    # Assuming fastq filenames end in ".fastq" here: If they end in ".fq", change the argument to -name "*.fq"
+
+    Assuming fastq filenames end in ".fastq" here: If they end in ".fq", change the argument to -name "*.fq"
     
     find /path/to/fastq_dir -type f -name "*.fastq" -exec gzip {} \;
 
