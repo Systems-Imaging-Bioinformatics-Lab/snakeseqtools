@@ -1,19 +1,23 @@
 #Enter treatment sample names
 treatments:
-  - GCLM_rep1
-  - GCLM_rep2
+  - s1_rep1
+  - s1_rep2
+  - s2_rep1
+  - s2_rep2
 
 #Provide controls if present, if not comment out these lines
-#controls:
-# - control1
-# - control2...
+controls:
+ - s1_control
+ - s1_control
+ - s2_control
+ - s2_control
 
 #yes or no
-control_present: "no"
+control_present: "yes"
 
 
-#If calling broad peaks use --broad
-broad_peak: ""
+#Yes if calling broad peaks, otherwise no 
+broad_peak: "yes"
 
 blacklist: "/scratch/ukarvind_root/ukarvind99/anashank/pipeline/ChIPseq_ATACseq_pipelines/data/references/blacklist/hg19-blacklist.v2.bed.gz"
 
