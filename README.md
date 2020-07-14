@@ -3,7 +3,7 @@ Analysis pipelines for RNAseq, ChIPseq and ATAC-seq
 
 
 # Before running 
-Modify all config files in the `config` folder to include sample details to be analyzed and required index paths as per specifications. You can also specify custom options for the trimming and alignment steps. 
+Modify all config files in the `config` folder to include sample details to be analyzed and required index paths as per specifications. You can also specify custom options for the trimming and alignment steps. Also, modify `sbat` files to set greatlakes account name and custom memory/core requirements.
 
 Samples can be run in single or paired ended modes, and the corresponding option can be specified in the `config.yaml` file as `se` or `pe` respectively. All input files must have the format `.fq.gz` and be placed a folder called `input` . Paired ended samples must be specified in the following format: `sample_1.fq.gz, sample_2.fq.gz`. Multiple samples can be specified under the keyword `samples` in the `config.yaml` file in the following format (note the space between `-` and `sample`):
 
