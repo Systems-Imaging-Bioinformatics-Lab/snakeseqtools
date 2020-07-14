@@ -65,13 +65,17 @@ If your file extensions are not `.fq.gz`, for example if they are `.fastq.gz`, y
 * [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * [hisat2](http://daehwankimlab.github.io/hisat2/)
 * [samtools/1.9](http://www.htslib.org/)
-
+* [picard-tools](https://broadinstitute.github.io/picard/)
+* [bedtools](https://bedtools.readthedocs.io/en/latest/)
 
 
 ### How to run?
 
 ```bash
+
 mkdir fastQC_output
+
 Dry run: snakemake --snakefile <filename> --configfile config/<configfilename> -n
+
 Actual run: sbatch <filename>.sbat
 ```
