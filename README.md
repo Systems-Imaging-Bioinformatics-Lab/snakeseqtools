@@ -49,8 +49,6 @@ If your file extensions are not `.fq.gz`, for example if they are `.fastq.gz`, y
 
 ```bash
 mkdir fastQC_output
-Dry run: snakemake -n
-Actual run: snakemake --cores [number of cores]
-
-Run snakemake --unlock if directory is locked
+Dry run: snakemake --snakefile <filename> --configfile config/<configfilename> -n
+Actual run: sbatch <filename>.sbat
 ```
